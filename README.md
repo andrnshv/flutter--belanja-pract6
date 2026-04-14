@@ -19,3 +19,9 @@ A new Flutter project.
 ### Praktikum 2
 ![Screenshot Prak2](images/Praktikum2.png)
 - Tambahkan atribut foto produk, stok, dan rating. Ubahlah tampilan menjadi GridView seperti di aplikasi marketplace pada umumnya.
+
+## Go_Router
+#### 1. Install Dependency
+![Screenshot Dependency](images/Go_Router_Dependency.png)
+#### 2. Implementasi Go Router
+![Screenshot Go_Router](images/Go_Router.png)

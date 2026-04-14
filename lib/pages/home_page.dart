@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import '../models/item.dart';
 
 class HomePage extends StatelessWidget {
@@ -6,14 +7,14 @@ class HomePage extends StatelessWidget {
     Item(
       name: 'Sugar',
       price: 5000,
-      image: 'images/gula.png',
+      image: 'assets/images/gula.png',
       stock: 10,
       rating: 4.5,
     ),
     Item(
       name: 'Salt',
       price: 2000,
-      image: 'images/garam.png',
+      image: 'assets/images/garam.png',
       stock: 5,
       rating: 4.0,
     ),
@@ -26,7 +27,6 @@ class HomePage extends StatelessWidget {
         title: Text("Belanja"),
         centerTitle: true,
       ),
-
       body: GridView.builder(
         padding: EdgeInsets.all(10),
         itemCount: items.length,
@@ -41,11 +41,7 @@ class HomePage extends StatelessWidget {
 
           return InkWell(
             onTap: () {
-              Navigator.pushNamed(
-                context,
-                '/item',
-                arguments: item,
-              );
+              context.push('/item', extra: item);
             },
             child: Card(
               elevation: 3,
@@ -57,36 +53,21 @@ class HomePage extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Gambar + Hero
                     Expanded(
                       child: Center(
                         child: Hero(
                           tag: item.name,
-                          child: Image.asset(
-                            item.image,
-                            fit: BoxFit.cover,
-                          ),
+                          child: Image.asset(item.image),
                         ),
                       ),
                     ),
-
                     SizedBox(height: 8),
-
-                    // Nama
                     Text(
                       item.name,
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: TextStyle(fontWeight: FontWeight.bold),
                     ),
-
-                    // Harga
                     Text("Rp ${item.price}"),
-
-                    // Rating
                     Text("⭐ ${item.rating}"),
-
-                    // Stok
                     Text("Stok: ${item.stock}"),
                   ],
                 ),
@@ -102,7 +83,6 @@ class HomePage extends StatelessWidget {
         child: Text(
           "Andrian Sheva A.F - 244107060062",
           textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 12),
         ),
       ),
     );
