@@ -15,3 +15,7 @@ A new Flutter project.
 - Tambah InkWell
 - Pindahkan Card ke dalam InkWell
 - Tambah onTap → untuk navigasi ke /item
+
+### Praktikum 2
+![Screenshot Prak2](images/Praktikum2.png)
+- Tambahkan atribut foto produk, stok, dan rating. Ubahlah tampilan menjadi GridView seperti di aplikasi marketplace pada umumnya.
